@@ -41,7 +41,7 @@ jinja2-mjml==0.1.0
 jinja2-tools==1.0.7
 joblib==1.2.0
 mjml-python==1.0.0
-numpy==1.25.0
+numpy==1.21.6
 outcome==1.2.0
 packaging==23.1
 pandas==2.0.2
