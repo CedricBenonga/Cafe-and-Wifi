@@ -55,7 +55,7 @@ pycparser==2.21
 pyparsing==3.1.0
 pyspark==3.4.0
 python-dateutil==2.8.2
-python-dotenv==1.0.0
+python-dotenv==0.21.1
 pytz==2023.3
 requests==2.31.0
 scikit-learn==1.2.2
