@@ -1,0 +1,59 @@
+{% include "header.html" %}
+
+<div class="container" style="padding-top: 75px;">
+    <!--    Site title-->
+    <h4 style="color: #526D82; text-align: center; padding-bottom: 25px;">
+        A collection of appropriate coffee shops<br>for remote work!</h4>
+
+    <!--    Search-bar-->
+    <nav class="navbar" style="margin-bottom:40px;">
+        <div class="container-fluid">
+            <form action="{{ url_for('search') }}" method="post" class="d-flex" style="position: absolute; right: 0;">
+                <input class="form-control me-2" type="search" placeholder="Search name or location" aria-label="Search"
+                       name="search">
+                <button class="btn btn-outline-dark" type="submit"
+                        style="height: 44px; border-radius: 5%; padding-bottom: 20px;">
+                    Search
+                </button>
+            </form>
+        </div>
+    </nav>
+
+    <!--    Posts layout-->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-sm-1 g-100">
+        {% for post in all_posts: %}
+        <div class="col" style="padding-bottom: 50px;">
+            <div class="card" style="border: none !important; text-align: center;">
+                <a class="post-a" href="{{ url_for('show_post', post_id=post.id) }}">
+                    <img src={{post.img_url}} class="card-img-top"
+                         style="width: 290px; height: 290px; border-radius: 20%;">
+                </a>
+                <div class="card-body">
+                    <a class="post-a" href="{{ url_for('show_post', post_id=post.id) }}" style="text-decoration: none;">
+                        <h5 class="post-subtitle">{{post.name}}</h5>
+                    </a>
+                    <p class="post-meta">
+                        Located in:
+                        <a target="_blank" rel="noopener noreferrer" class="post-a" href="{{post.map_url}}"
+                           style="text-decoration: none;">{{post.location}}</a><br>
+                        <a target="_blank" rel="noopener noreferrer" class="post-a" href="{{post.map_url}}"
+                           style="text-decoration: none;">See on Map</a><br>
+                        <a class="post-a" href="{{url_for('confirm_delete', post_id=post.id) }}"
+                           style="text-decoration: none;">Delete Cafe</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!--    New post-->
+    <div class="clearfix">
+        <a class="btn btn-outline-dark float-right" href="{{url_for('add_new_post')}}"
+           style="border-radius: 50%;">Post a new Cafe</a>
+    </div>
+    <hr>
+</div>
+
+{% include "footer.html" %}
+
