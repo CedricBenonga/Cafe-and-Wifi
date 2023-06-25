@@ -11,7 +11,7 @@ Pillow==9.5.0
 PySocks==1.7.1
 SQLAlchemy==2.0.16
 WTForms==3.0.1
-Werkzeug==2.3.6
+Werkzeug==2.2.3
 ansicolors==1.1.8
 async-generator==1.10
 attrs==23.1.0
