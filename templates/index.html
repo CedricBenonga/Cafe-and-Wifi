@@ -22,7 +22,7 @@
     <!--    Posts layout-->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-sm-1 g-100">
         {% for post in all_posts: %}
-        <div class="col" style="padding-bottom: 50px;">
+        <div class="col">
             <div class="card" style="border: none !important; text-align: center;">
                 <a class="post-a" href="{{ url_for('show_post', post_id=post.id) }}">
                     <img src={{post.img_url}} class="card-img-top"
